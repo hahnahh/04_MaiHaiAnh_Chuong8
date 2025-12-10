@@ -1,14 +1,8 @@
-﻿def ucln(a, b):
-    while b != 0:
-        a, b = b, a % b
-    return a
-
-tu = int(input("Nhập tử số: "))
-mau = int(input("Nhập mẫu số: "))
-
-if mau == 0:
-    print("Mẫu số không được bằng 0!")
-else:
-    g = ucln(tu, mau)
-    print("Phân số tối giản là:", tu//g, "/", mau//g)
+﻿def kiem_tra_so_armstrong(n):
+    # Chuyển số thành chuỗi để duyệt từng chữ số
+    digits = str(n)
+     # Tính tổng lũy thừa bậc 3 của các chữ số
+    tong = sum(int(d)**3 for d in digits)
+      # Kiểm tra xem có bằng chính nó không
+    return tong == n
 

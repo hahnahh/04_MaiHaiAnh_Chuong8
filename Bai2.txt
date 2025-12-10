@@ -1,11 +1,13 @@
-﻿a = int(input("Nhập số thứ nhất: "))
-b = int(input("Nhập số thứ hai: "))
+﻿a = float(input("nhập hệ số a :"))
+b = float(input("nhập hằng số b :"))
+x = giai_phuong_trinh_bac_nhat(a,b)
 
-# Thuật toán Euclid
-def ucln(a, b):
-    while b != 0:
-        a, b = b, a % b
-    return a
-
-print("UCLN của", a, "và", b, "là:", ucln(a, b))
-
+def giai_phuong_trinh_bac_nhat(a,b):
+    if a == 0:
+        if b == 0:
+            print("phương trình vô số nghiệm")
+        else:
+            print("phương trình vô nghiệm")
+    else:
+        x = (-b)/a
+        print("nghiệm của phương trình", x)
