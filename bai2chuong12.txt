@@ -1,0 +1,18 @@
+﻿#chuoi_utility.py
+def dao_nguoc_chuoi(chuoi):
+    return chuoi[::-1]
+
+def dem_so_tu(chuoi):
+  danh_sach_tu = chuoi.split()
+    return len(danh_sach_tu)
+
+#main,py
+# Chỉ import hàm dao_nguoc_chuoi
+from chuoi_utility import dao_nguoc_chuoi
+
+chuoi_goc = "Xin chao Python"
+ket_qua = dao_nguoc_chuoi(chuoi_goc)
+
+print(f"Chuỗi gốc: (chuoi_goc)")
+print(f"Chuỗi đảo ngược: (ket_qua)")
+

@@ -1,0 +1,16 @@
+﻿#file hinh_hoc.py
+import math
+def chu_vi_hinh_vuong(canh):
+    return canh * 4
+def chu_vi_hinh_tron(ban_kinh):
+    return 2 * math.pi * ban_kinh
+import hinh_hoc  # Import module vừa tạo
+
+#file main.py
+canh = 5
+cv_vuong = hinh_hoc.chu_vi_hinh_vuong(canh)
+print(f"Chu vi hình vuông cạnh (canh) là: (cv_vuong)")
+
+ban_kinh = 3
+cv_tron = hinh_hoc.chu_vi_hinh_tron(ban_kinh)
+print(f"Chu vi hình tròn bán kính {ban_kinh} là: (cv_tron:.2f)")

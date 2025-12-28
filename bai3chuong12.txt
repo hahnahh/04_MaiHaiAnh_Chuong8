@@ -1,0 +1,28 @@
+﻿#co_ban.py
+def cong(a, b):
+    return a + b
+def tru(a, b):
+    return a - b
+#nang_cao.py
+import math
+def luy_thua(co_so, so_mu):
+    return co_so ** so_mu
+def can_bac_hai(so):
+    if so < 0:
+        return "Không thể tính căn bậc hai số âm"
+    return math.sqrt(so)
+
+#su_dung.py
+from may_tinh import co_ban, nang_cao
+
+# Kiểm tra phép cộng
+print("Tổng 17+ 5 =", co_ban.cong7, 5))
+
+# Kiểm tra phép trừ
+print("Hiệu 10 - 5 =", co_ban.tru(10, 5))
+
+# Kiểm tra lũy thừa
+print("2 mũ 3 =", nang_cao.luy_thua(2, 3))
+
+# Kiểm tra căn bậc hai
+print("Căn bậc hai của 36 =", nang_cao.can_bac_hai(36))
