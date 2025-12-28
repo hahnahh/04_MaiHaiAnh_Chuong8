@@ -1,0 +1,20 @@
+﻿#danh_sach.py
+def sap_xep_tang_dan(danh_sach):
+    return sorted(danh_sach)
+#tu_dien.py
+def lay_gia_tri(tu_dien, khoa):
+    return tu_dien.get(khoa, "Không tìm thấy khóa")
+#import
+from du_lieu import danh_sach, tu_dien
+
+# Kiểm tra sắp xếp danh sách
+ds_so = [5, 2, 9, 1, 5, 6]
+ds_da_sap_xep = danh_sach.sap_xep_tang_dan(ds_so)
+print(f"Danh sách gốc: {ds_so}")
+print(f"Danh sách sắp xếp: {ds_da_sap_xep}")
+
+# Kiểm tra lấy giá trị từ điển
+thong_tin = ("ten": "An", "tuoi": 20, "lop": "Tin hoc")
+khoa_can_tim = "ten"
+gia_tri = tu_dien.lay_gia_tri(thong_tin, khoa_can_tim)
+print(f"Giá trị của khóa '(khoa_can_tim)': {gia_tri}")
