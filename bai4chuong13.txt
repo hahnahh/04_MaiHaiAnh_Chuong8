@@ -1,0 +1,34 @@
+﻿
+du_lieu_mau = """ID, Tên sản phẩm, Giá
+1, Laptop, 1200
+2, Chuột máy tính, 25
+3, Bàn phím, 75
+"""
+with open('san_pham.txt', 'w', encoding='utf-8') as f:
+    f.write(du_lieu_mau)
+try:
+    id_can_sua = input("Nhập ID sản phẩm cần cập nhật giá: ") # Ví dụ nhập: 2
+    gia_moi = input("Nhập giá mới: ")                         # Ví dụ nhập: 30
+except ValueError:
+    print("Vui lòng nhập số hợp lệ.")
+    exit()
+
+danh_sach_moi = []
+
+with open('san_pham.txt', 'r', encoding='utf-8') as f:
+    # Đọc từng dòng thành một list
+    cac_dong = f.readlines()
+
+for dong in cac_dong:
+    dong = dong.strip() # Loại bỏ \n ở cuối dòng
+    cac_phan = dong.split(', ') # Tách dấu phẩy: ['2', 'Chuột máy tính', '25']
+   
+    if cac_phan[0] == id_can_sua:
+        cac_phan[2] = gia_moi
+        print(f"Đã tìm thấy ID {id_can_sua}, cập nhật giá thành {gia_moi}")
+    dong_moi = ", ".join(cac_phan) + "\n"
+    danh_sach_moi.append(dong_moi)
+with open('san_pham.txt', 'w', encoding='utf-8') as f:
+    f.writelines(danh_sach_moi)
+
+print("Hoàn tất cập nhật file san_pham.txt")

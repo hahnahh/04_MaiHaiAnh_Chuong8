@@ -1,0 +1,17 @@
+﻿
+file_nguon = 'vanban.txt'
+file_dich = 'vanban_copy.txt'
+try:
+    with open(file_nguon, 'rb') as f_src, open(file_dich, 'wb') as f_dest:
+        while True:
+            # 3. Đọc từng khối 1024 bytes (1KB)
+            chunk = f_src.read(1024)
+            if not chunk:
+                break
+            f_dest.write(chunk)
+            
+    print(f"Đã sao chép từ '{file_nguon}' sang '{file_dich}' thành công.")
+
+except FileNotFoundError:
+    print(f"Không tìm thấy file nguồn: {file_nguon}")
+

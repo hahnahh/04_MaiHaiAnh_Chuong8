@@ -1,0 +1,34 @@
+﻿import os
+
+ten_thu_muc = "temp_files"
+if not os.path.exists(ten_thu_muc):
+    os.mkdir(ten_thu_muc)
+    print(f"1. Đã tạo thư mục '{ten_thu_muc}'")
+else:
+    print(f"1. Thư mục '{ten_thu_muc}' đã tồn tại")
+
+duong_dan_cu = os.path.join(ten_thu_muc, "file.txt")
+
+with open(duong_dan_cu, "w", encoding="utf-8") as f:
+    f.write("Đây là nội dung thử nghiệm.")
+print(f"2. Đã tạo file '{duong_dan_cu}'")
+
+duong_dan_moi = os.path.join(ten_thu_muc, "new_file.txt")
+
+os.rename(duong_dan_cu, duong_dan_moi)
+print(f"3. Đã đổi tên file thành '{duong_dan_moi}'")
+
+duong_dan_dich = "new_file.txt"
+if os.path.exists(duong_dan_dich):
+    os.remove(duong_dan_dich) 
+
+os.rename(duong_dan_moi, duong_dan_dich)
+print(f"4. Đã di chuyển file ra '{duong_dan_dich}'")
+
+try:
+    os.rmdir(ten_thu_muc)
+    print(f"5. Đã xóa thư mục '{ten_thu_muc}'")
+except OSError as e:
+    print(f"Lỗi: Không thể xóa thư mục. Lý do: {e}")
+
+print("\n--- Hoàn tất bài tập ---")
