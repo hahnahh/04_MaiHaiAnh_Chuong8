@@ -1,0 +1,16 @@
+﻿import os
+
+root = "my_project
+os.makedirs(os.path.join(root, "src"), exist_ok=True)
+os.makedirs(os.path.join(root, "docs"), exist_ok=True)
+os.makedirs(os.path.join(root, "data"), exist_ok=True)
+pen(os.path.join(root, "src", "main.py"), "w").close()
+open(os.path.join(root, "docs", "README.md"), "w").close()
+open(os.path.join(root, "data", "input.txt"), "w").close()
+print("Cấu trúc thư mục:")
+for folder in os.listdir(root):
+    print("-", folder)
+    path = os.path.join(root, folder)
+    if os.path.isdir(path):
+        for file in os.listdir(path):
+            print("   +", file)

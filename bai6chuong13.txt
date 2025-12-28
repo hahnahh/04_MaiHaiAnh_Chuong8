@@ -1,0 +1,27 @@
+﻿
+import csv
+
+ten_file = 'nhan_vien.csv'
+header = ['ID', 'Tên', 'Lương']
+data = [
+    {'ID': 'NV01', 'Tên': 'Nguyễn Văn A', 'Lương': 45000},
+    {'ID': 'NV02', 'Tên': 'Trần Thị B', 'Lương': 60000},
+    {'ID': 'NV03', 'Tên': 'Lê Văn C', 'Lương': 75000},
+    {'ID': 'NV04', 'Tên': 'Phạm Thị D', 'Lương': 48000}
+]
+
+with open(ten_file, 'w', encoding='utf-8', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=header)
+    writer.writeheader() 
+    writer.writerows(data) 
+print("Đã tạo file nhan_vien.csv")
+print("\n--- Danh sách nhân viên có lương > 50000 ---")
+
+with open(ten_file, 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    
+    for row in reader:
+        luong = int(row['Lương'])
+        
+        if luong > 50000:
+            print(f"Nhân viên: {row['Tên']} - Lương: {luong}")

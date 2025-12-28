@@ -1,0 +1,14 @@
+﻿
+with open('vanban.txt', 'r', encoding='utf-8') as f:
+    content = f.read()
+content_sach = content.lower().replace(',', '').replace('.', '')
+danh_sach_tu = content_sach.split()
+tan_suat = {}
+for tu in danh_sach_tu:
+    if tu in tan_suat:
+        tan_suat[tu] += 1  # Nếu từ đã có, tăng đếm lên 1
+    else:
+        tan_suat[tu] = 1   # Nếu chưa có, gán bằng 1
+print("\n--- Tần suất xuất hiện của các từ ---")
+for tu, so_lan in tan_suat.items():
+    print(f"'{tu}': {so_lan}")
